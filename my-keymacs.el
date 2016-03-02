@@ -27,3 +27,5 @@
 ;; activation de la molette souris
 (mouse-wheel-mode)
 
+;;Load theme
+(load-theme 'monokai t)
