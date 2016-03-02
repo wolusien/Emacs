@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: documentclass
+# key: docclass
+# --
+\documentclass[12pt,french]{$0}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+\usepackage{verbatim}
+\usepackage{amsmath, amssymb}
+\usepackage[french]{babel}
+
+\begin{document}
+$1  
+\end{document}
