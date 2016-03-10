@@ -1,3 +1,6 @@
+(if (window-system)
+  (set-frame-height (selected-frame) 30))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -11,9 +14,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-(if (window-system)
-  (set-frame-height (selected-frame) 30))
-
 (set-language-environment "UTF-8")
 
 ;;Configuration sources
@@ -23,5 +23,5 @@
 ))
 
 ;;Themes sources
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/") 
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/") 
 
