@@ -15,8 +15,8 @@
 (setq yas-dont-activate t)))
 :config
 (yas-global-mode 1)
-(yas-load-directory "~/.emacs.d/snippets"))
-
+;;(yas-load-directory "~/.emacs.d/snippets"))
+)
 ;;Latex-previrew-pane
 ;;(use-package latex-preview-pane
   ;;:init
@@ -79,4 +79,3 @@
 
 ;; Compilation command
 (add-hook 'LaTeX-mode-hook (lambda () (setq compile-command "latexmk -pdf")))
-

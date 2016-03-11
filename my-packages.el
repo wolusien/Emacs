@@ -13,6 +13,8 @@
     ac-math
     auctex
     auctex-latexmk
+    auto-complete
+    auto-complete-auctex
     bibtex
     cdlatex 
     latex-extra
