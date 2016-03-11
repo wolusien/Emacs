@@ -18,11 +18,11 @@
 ;;(yas-load-directory "~/.emacs.d/snippets"))
 )
 ;;Latex-previrew-pane
-;;(use-package latex-preview-pane
-  ;;:init
-  ;;(setq text-mode-hook '(lambda() (flyspell-mode t) ))
-  ;;(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-  ;;(add-hook 'LaTeX-mode-hook 'latex-preview-pane-mode))
+(use-package latex-preview-pane
+  :init
+  (setq text-mode-hook '(lambda() (flyspell-mode t) ))
+  (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+  (add-hook 'LaTeX-mode-hook 'latex-preview-pane-mode))
 
 ;;CDLatex
 (use-package cdlatex
