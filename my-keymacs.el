@@ -28,4 +28,4 @@
 (mouse-wheel-mode)
 
 ;;Load theme
-;;(load-theme 'monokai t)
+(load-theme 'monokai t)
