@@ -27,5 +27,8 @@
 ;; activation de la molette souris
 (mouse-wheel-mode)
 
+;;Make parenthesis work as a pair
+(electric-pair-mode 1)
+
 ;;Load theme
 (load-theme 'monokai t)
