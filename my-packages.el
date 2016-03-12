@@ -24,6 +24,7 @@
     math-symbol-lists
     math-symbols
     php-mode
+    popup
     tuareg
     use-package
     yasnippet

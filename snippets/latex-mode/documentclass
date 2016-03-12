@@ -2,7 +2,7 @@
 # name: documentclass
 # key: docclass
 # --
-\documentclass[12pt,french]{$0}
+\documentclass[$2pt,${3:$$(yas/choose-value '("french" "english"))}]{${1:$$(yas/choose-value '("article" "report" "book" "letter"))}}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}

@@ -30,8 +30,11 @@
   (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
   (add-hook 'LaTeX-mode-hook 'cdlatex-mode))
 
-;;Auctex
+	
+;;LaTex math mode
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
+;;Auctex
 ;; Basic settings
 (use-package auctex
   :ensure t
