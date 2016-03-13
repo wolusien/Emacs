@@ -15,8 +15,13 @@
     auctex-latexmk
     auto-complete
     auto-complete-auctex
+    auto-complete-c-headers
     bibtex
-    cdlatex 
+    cdlatex
+    flymake-google-cpplint 
+    flymake-cursor
+    google-c-style
+    iedit 
     latex-extra
     latex-math-preview
     latex-preview-pane
