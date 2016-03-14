@@ -18,23 +18,10 @@
 ;;(yas-load-directory "~/.emacs.d/snippets"))
 )
 
-;;Auto-complete
-;; start auto-complete with emacs
-(require 'auto-complete)
-;; do default config for auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
 
-;;C,C++
-; let's define a function which initializes auto-complete-c-headers and gets called for c/c++ hooks
-(defun my:ac-c-header-init ()
-  (require 'auto-complete-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'achead:include-directories '"/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../x86_64-linux-gnu/include")
-)
-; now let's call this function from c/c++ hooks
-(add-hook 'c++-mode-hook 'my:ac-c-header-init)
-(add-hook 'c-mode-hook 'my:ac-c-header-init)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Latex
 
 
 ;;Latex-previrew-pane
@@ -43,6 +30,8 @@
   (setq text-mode-hook '(lambda() (flyspell-mode t) ))
   (add-hook 'LaTeX-mode-hook 'flyspell-mode)
   (add-hook 'LaTeX-mode-hook 'latex-preview-pane-mode))
+
+
 
 ;;CDLatex
 (use-package cdlatex
@@ -104,6 +93,32 @@
 (add-hook 'LaTeX-mode-hook (lambda () (setq compile-command "latexmk -pdf")))
 
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;C configuration
+
+;;C,C++
+; let's define a function which initializes auto-complete-c-headers and gets called for c/c++ hooks
+(defun my:ac-c-header-init ()
+  (require 'auto-complete-c-headers)
+  (add-to-list 'ac-sources 'ac-source-c-headers)
+  (add-to-list 'achead:include-directories '"/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../x86_64-linux-gnu/include")
+)
+; now let's call this function from c/c++ hooks
+(add-hook 'c++-mode-hook 'my:ac-c-header-init)
+(add-hook 'c-mode-hook 'my:ac-c-header-init)
+
+
+;;Auto-complete c
+(add-hook 'c-mode-hook
+            (lambda ()
+              (add-to-list 'ac-sources 'ac-source-c-headers)
+              (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+
+
+
 ;;Coding properly in C,C++(use style recommended by Google(will be use in the futur))
 ; start flymake-google-cpplint-load
 ; let's define a function for flymake initialization
@@ -137,3 +152,14 @@
 ;; you can use system-include-path for setting up the system header file locations.
 ;; turn on automatic reparsing of open buffers in semantic
 ;;(global-semantic-idle-scheduler-mode 1)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;Python configuration
+
+;;Enable flyspell (show the errors)
+(require 'python)
+(add-hook 'python-mode-hook 'flyspell-prog-mode)
