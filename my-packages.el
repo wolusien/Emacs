@@ -18,10 +18,6 @@
     auto-complete-c-headers
     bibtex
     cdlatex
-    flymake-google-cpplint 
-    flymake-cursor
-    google-c-style
-    iedit 
     latex-extra
     latex-math-preview
     latex-preview-pane
