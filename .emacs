@@ -22,5 +22,5 @@
 ;;Themes sources
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/") 
 ;;Load theme
-;;(load-theme 'monokai t)
+(load-theme 'monokai t)
 
