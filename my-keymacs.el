@@ -3,7 +3,6 @@
 
 ;;Indentation
 (setq-default indent-tabs-mode nil)  ; use only spaces and no tabs
-(setq default-tab-width 2)
 
 ;; Affiche le numéro de ligne et de colonne
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
@@ -30,4 +29,4 @@
 ;;Make parenthesis work as a pair
 (electric-pair-mode 1)
 	
-
+(add-to-list 'default-frame-alist '(font . "Ubuntu Mono"))
