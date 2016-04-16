@@ -12,6 +12,8 @@
  )
 
 (set-language-environment "UTF-8")
+;;Permet de gérer les ê
+(load-library "iso-transl")
 
 ;;Configuration sources
 (load "~/.emacs.d/my-loadpackages.el")

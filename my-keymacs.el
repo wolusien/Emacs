@@ -28,5 +28,3 @@
 
 ;;Make parenthesis work as a pair
 (electric-pair-mode 1)
-	
-(add-to-list 'default-frame-alist '(font . "Ubuntu Mono Bold"))
