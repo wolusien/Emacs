@@ -28,3 +28,5 @@
 
 ;;Make parenthesis work as a pair
 (electric-pair-mode 1)
+
+
