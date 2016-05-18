@@ -3,6 +3,7 @@
 
 ;;Indentation
 (setq-default indent-tabs-mode nil)  ; use only spaces and no tabs
+(setq tab-width 2) ; or any other preferred value
 
 ;; Affiche le numéro de ligne et de colonne
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
