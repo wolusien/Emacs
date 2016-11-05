@@ -30,4 +30,6 @@
 ;;Make parenthesis work as a pair
 (electric-pair-mode 1)
 
-
+(set-language-environment "UTF-8")
+;;Permet de gérer les ê
+(load-library "iso-transl")

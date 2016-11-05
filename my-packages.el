@@ -18,6 +18,7 @@
     auto-complete-c-headers
     bibtex
     cdlatex
+    hideshowvis
     latex-extra
     latex-math-preview
     latex-preview-pane
