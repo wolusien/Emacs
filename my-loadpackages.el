@@ -18,7 +18,35 @@
 ;;(yas-load-directory "~/.emacs.d/snippets"))
 )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Code folding(Reduction de code ou de fonction avec + et -)
+(autoload 'hideshowvis-minor-mode
+   "hideshowvis"
+   "Will indicate regions foldable with hideshow in the fringe."
+   'interactive)
+   (dolist (hook (list 'emacs-lisp-mode-hook
+                     'c++-mode-hook
+		     'python-mode-hook
+		     'c-mode-common-hook
+		     'java-mode-hook
+		     'lisp-mode-hook
+		     'perl-mode-hook
+		     'sh-mode-hook))
+   (add-hook hook 'hideshowvis-enable))
+(require 'hideshowvis)
+(load-library "hideshow")
+(hideshowvis-symbols)
+(autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
+
+;;Indent guide
+(load "~/.emacs.d/indent-guide.el")
+(use-package indent-guide 
+  :config 
+  (indent-guide-global-mode)
+  (set-face-background 'indent-guide-face "dimblack")
+  (setq indent-guide-recursive t)
+  (setq indent-guide-char "|")
+)
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -99,10 +127,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;C configuration
-
-;;C,C++
+;;C,C++ configuration
 
 (global-auto-complete-mode t)
 
@@ -112,26 +137,24 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-; let's define a function which initializes auto-complete-c-headers and gets called for c/c++ hooks
-(defun my:ac-c-header-init ()
-  (require 'auto-complete-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'achead:include-directories '"/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../x86_64-linux-gnu/include")
-)
-; now let's call this function from c/c++ hooks
-(add-hook 'c++-mode-hook 'my:ac-c-header-init)
-(add-hook 'c-mode-hook 'my:ac-c-header-init)
+;; ; let's define a function which initializes auto-complete-c-headers and gets called for c/c++ hooks
+;; (defun my:ac-c-header-init ()
+;;   (require 'auto-complete-c-headers)
+;;   (add-to-list 'ac-sources 'ac-source-c-headers)
+;;   (add-to-list 'achead:include-directories '"/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../x86_64-linux-gnu/include")
+;; )
+;; ; now let's call this function from c/c++ hooks
+;; (add-hook 'c++-mode-hook 'my:ac-c-header-init)
+;; (add-hook 'c-mode-hook 'my:ac-c-header-init)
 
-; turn on Semantic
+;; ; turn on Semantic
 (semantic-mode 1)
-;let's define a function which adds semantic as a suggestion backend to auto complete
-; and hook this function to c-mode-common-hook
+;; ;let's define a function which adds semantic as a suggestion backend to auto complete
+;; ; and hook this function to c-mode-common-hook
 (defun my:add-semantic-to-autocomplete() 
-  (add-to-list 'ac-sources 'ac-source-semantic)
+(add-to-list 'ac-sources 'ac-source-semantic)
 )
 (add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;Java
