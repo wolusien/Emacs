@@ -30,22 +30,25 @@
 		     'java-mode-hook
 		     'lisp-mode-hook
 		     'perl-mode-hook
+		     ;;'prog-mode
 		     'sh-mode-hook))
-   (add-hook hook 'hideshowvis-enable))
+(add-hook hook 'hideshowvis-enable))
 (require 'hideshowvis)
 (load-library "hideshow")
 (hideshowvis-symbols)
+(define-key hs-minor-mode-map (kbd "C-c <left>") 'hs-hide-block)
+(define-key hs-minor-mode-map (kbd "C-c <right>") 'hs-show-block)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
 
 ;;Indent guide
 (load "~/.emacs.d/indent-guide.el")
-(use-package indent-guide 
-  :config 
-  (indent-guide-global-mode)
-  (set-face-background 'indent-guide-face "dimblack")
-  (setq indent-guide-recursive t)
-  (setq indent-guide-char "|")
-)
+;;(use-package indent-guide 
+;;  :config 
+;;  (indent-guide-global-mode)
+;;  (set-face-background 'indent-guide-face "dimblack")
+;;  (setq indent-guide-recursive t)
+;;  (setq indent-guide-char "|")
+;;)
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

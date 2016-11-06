@@ -33,3 +33,5 @@
 (set-language-environment "UTF-8")
 ;;Permet de gérer les ê
 (load-library "iso-transl")
+;;Dictionnaire français
+(setq ispell-dictionary "francais")
